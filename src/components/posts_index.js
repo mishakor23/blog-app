@@ -20,7 +20,7 @@ class PostsIndex extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div>
         <h3>Posts</h3>
         <ul className="list-group">
           {this.renderPosts()}
