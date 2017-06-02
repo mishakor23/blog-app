@@ -22,6 +22,24 @@ class PostsNew extends React.Component {
     );
   }
 
+  renderContentField(field){
+    const { meta: { touched, error } } = field;
+    const className = `form-control ${touched && error ? 'error-border' : ''}`;
+    return (
+      <div className="form-group">
+        <label htmlFor="">{field.label}</label>
+        <textarea className={className}
+          type="text"
+          {...field.input}
+          rows="10"
+        ></textarea>
+        <div className="text-error">
+          {touched ? error : ''}
+        </div>
+      </div>
+    );
+  }
+
   onSubmit(values) {
     this.props.createPost(values, () => {
       this.props.history.push('/');
@@ -46,7 +64,7 @@ class PostsNew extends React.Component {
         <Field
           label="Content"
           name="content"
-          component={this.renderField}
+          component={this.renderContentField}
         />
         <button type="submit" className="btn btn-primary">Save</button>
         <Link className="btn btn-danger" to="/">Cancel</Link>
