@@ -3,7 +3,21 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
 .text-xs-left { text-align: left; }
 .text-xs-right { text-align: right; }
 .text-xs-center { text-align: center; }
 .text-xs-justify { text-align: justify; }
+
+.error-border {
+  border-color: #d9534f;
+}
+
+.text-error {
+  color: #d9534f;
+  margin: 10px 0 0 20px;
+  height: 20px;
+}
+form a {
+  margin-left: 10px;
+}
